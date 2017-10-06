@@ -5,17 +5,44 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import Main from './Inventory.js';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'mobx-react/native'
+import { NativeRouter, Route, Link } from 'react-router-native'
+
+import Main from './Inventory.js';
 import store from './../config/Mobx'
 
 /*
+
+
+  <NativeRouter>
+    <View style={styles.container}>
+      <View style={styles.nav}>
+        <Link
+          to="/"
+          underlayColor='#f0f4f7'
+          style={styles.navItem}>
+            <Text>Home</Text>
+        </Link>
+        <Link
+          to="/about"
+          underlayColor='#f0f4f7'
+          style={styles.navItem}>
+            <Text>About</Text>
+        </Link>
+        <Link
+          to="/topics"
+          underlayColor='#f0f4f7'
+          style={styles.navItem} >
+            <Text>Topics</Text>
+        </Link>
+      </View>
+
+      <Route exact path="/" component={Home}/>
+      <Route path="/about" component={About}/>
+      <Route path="/topics" component={Topics}/>
+    </View>
+  </NativeRouter>
 
 <Provider store={Store}>
   <Main />
@@ -34,7 +61,13 @@ export default class App extends Component<{}> {
   render() {
     return (
       <Provider store={store}>
-        <Main />
+        <NativeRouter>
+          <View>
+          <Route exact path="/" component={() => <Main />}/>
+          <Route path="/about" component={() => <Main about={'about shit'} />}/>
+          <Route path="/topics" component={() => <Main topic={'topic shit'} />}/>
+        </View>
+        </NativeRouter>
       </Provider>
     );
   }
