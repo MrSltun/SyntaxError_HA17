@@ -56,7 +56,7 @@ export default class Map extends Component {
        <Button block light style={styles.Button}>
        <Link to="/">
 
-         <Text>Dark</Text>
+         <Text>menu</Text>
 
          </Link>
        </Button>

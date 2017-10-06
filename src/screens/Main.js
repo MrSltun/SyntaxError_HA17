@@ -12,7 +12,7 @@ import map from './Map'
 export default class Main extends Component {
   render() {
     return (
-      <Container>
+      <View>
 
     <View style={styles.containerImg}>
     <Image
@@ -52,7 +52,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  }
+    justifyContent: 'center',
+    alignSelf: 'center'
+
+
+
+
+  },
+  button:{
+  marginBottom: 10,
+  width: 150,
+  justifyContent: 'center',
+
+
+
+
+},
+containerImg:{
+
+
+alignSelf: 'center',
+marginBottom: 200,
+marginTop: 150
+
+
+
+},
 });
