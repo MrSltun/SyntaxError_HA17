@@ -6,32 +6,42 @@ import {
 } from 'react-native';
 import { Container, Header, Content, Button, Text } from 'native-base';
 import {Link} from 'react-router-native'
-import Dimensions from 'Dimensions'
-const width = Dimensions.get('window').width
-
+import Inventory from './Inventory.js'
+import Item from './Item.js'
+import map from './Map'
 export default class Main extends Component {
   render() {
     return (
-        <View style={styles.container}>
-          <Image
-            source={require('../img/home.jpg')}
-            style={{flex: 1.8, resizeMode: 'contain', height: width / 3, width: width / 3}} />
-          <View style={{flex: 1, justifyContent: 'space-around', padding: 120}}>
-            <Button>
-              <Link
-                to="/camera">
-              <Text>CAMERA</Text>
+      <Container>
+
+    <View style={styles.containerImg}>
+    <Image
+          source={require('../img/home.jpg')}
+          style={{width: 100, height: 100}}
+
+        />
+        </View>
+
+          <View style={styles.container}>
+          <Button style={styles.button}>
+  <Link to="/Inventory">
+                <Text>Inventory</Text>
             </Link>
+              </Button>
+
+            <Button style={styles.button}>
+            <Link to="/Item">
+                          <Text>Item</Text>
+                      </Link>
             </Button>
-            <Button>
-              <Text>Click Me!</Text>
-            </Button>
-            <Button>
-              <Link
-                to="/inv/item1">
-                <Text>CLICK ME!</Text>
-              </Link>
-            </Button>
+
+
+                        <Button style={styles.button}>
+                        <Link to="/Map">
+                                      <Text>map</Text>
+                                  </Link>
+                        </Button>
+
           </View>
         </View>
     );

@@ -7,6 +7,8 @@ import {
   Image,
   StyleSheet,
 } from 'react-native';
+import { Link } from 'react-router-native'
+
 import {inject, observer} from 'mobx-react/native'
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
 
@@ -25,11 +27,13 @@ export default class Item extends Component {
         <Header style={styles.Header}>
           <Left>
             <Button transparent>
-              <Icon name='arrow-back' />
+            <Link to="/">
+                          <Icon name='arrow-back' />
+                          </Link>
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>Items</Title>
           </Body>
         </Header>
 

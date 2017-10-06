@@ -12,8 +12,9 @@ import { NativeRouter, Route, Link } from 'react-router-native'
 import store from './../config/Mobx'
 import Main from './Main'
 import Item from './Item'
+import Inventory from './Inventory'
 import Camera from './Camera'
-
+import Map from './Map'
 /*
 
 
@@ -67,7 +68,13 @@ export default class App extends Component<{}> {
           <View style={{flex: 1}}>
           <Route exact path="/" component={() => <Main />}/>
           <Route path="/about" component={() => <Main about={'about shit'} />}/>
-          <Route path="/topics" component={() => <Main topic={'topic shit'} />}/>
+
+          <Route path="/Inventory" component={() => <Inventory  />}/>
+          <Route path="/Item" component={() => <Item  />}/>
+          <Route path="/Map" component={() => <Map  />}/>
+
+
+
           <Route path='/inv/:id' component={({match}) => <Item id={match.params.id}/>} />
           <Route path='/camera' component={() => <Camera />}/>
         </View>

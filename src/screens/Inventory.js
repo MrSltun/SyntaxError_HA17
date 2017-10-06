@@ -10,6 +10,7 @@ import {
 import { Link } from 'react-router-native'
 import { Container, Header, Content, Left, Right, Icon, Title, Button, List, ListItem, Thumbnail, Text, Body } from 'native-base';
 import {inject, observer} from 'mobx-react/native'
+import Main from './Main'
 
 @inject('store') @observer
 export default class Inventory extends Component {
@@ -23,11 +24,13 @@ export default class Inventory extends Component {
       <Header>
         <Left>
           <Button transparent>
+          <Link to="/">
             <Icon name='arrow-back' />
+            </Link>
           </Button>
         </Left>
         <Body>
-          <Title>Items</Title>
+          <Title>Inventory</Title>
         </Body>
         <Right>
 
