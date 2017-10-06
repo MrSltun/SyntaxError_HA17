@@ -10,7 +10,7 @@ import { Provider } from 'mobx-react/native'
 import { NativeRouter, Route, Link } from 'react-router-native'
 
 import store from './../config/Mobx'
-import Main from './Main'
+import Main from './Camera'
 import Item from './Item'
 
 /*
