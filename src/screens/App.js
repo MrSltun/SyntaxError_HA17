@@ -11,7 +11,17 @@ import {
   Text,
   View
 } from 'react-native';
-import Main from './Main.js';
+import Main from './Inventory.js';
+import { Provider } from 'mobx-react/native'
+import store from './../config/Mobx'
+
+/*
+
+<Provider store={Store}>
+  <Main />
+</Provider>
+
+*/
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,7 +33,9 @@ const instructions = Platform.select({
 export default class App extends Component<{}> {
   render() {
     return (
-      <Main />
+      <Provider store={store}>
+        <Main />
+      </Provider>
     );
   }
 }
