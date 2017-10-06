@@ -29,7 +29,7 @@ export default class Main extends Component {
               <Text >Click Me! </Text>
             </Button>
             <Link
-              to="/inv/item1"
+              to="/inv/item2"
               style={{height: 200, width: 210}}>
               <Text> Click Me2! </Text>
           </Link>

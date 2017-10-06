@@ -19,10 +19,7 @@ export default class Item extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Im the Item component</Text>
-        <Text>{this.data.title}</Text>
-        <Text>{this.data.desc}</Text>
-        <Text>{JSON.stringify(this.data.geo)}</Text>
+  <Text>ssssssssssssssss</Text>
       </View>
     );
   }
