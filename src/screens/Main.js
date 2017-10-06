@@ -5,6 +5,7 @@ import {
   Image
 } from 'react-native';
 import { Container, Header, Content, Button, Text } from 'native-base';
+import {Link} from 'react-router-native'
 
 
 export default class Main extends Component {
@@ -27,9 +28,11 @@ export default class Main extends Component {
             <Button style={styles.button}>
               <Text >Click Me! </Text>
             </Button>
-            <Button style={styles.button}>
-              <Text >Click Me! </Text>
-            </Button>
+            <Link
+              to="/inv/item1"
+              style={{height: 200, width: 210}}>
+              <Text> Click Me2! </Text>
+          </Link>
           </View>
         </Container>
     );
@@ -60,7 +63,7 @@ containerImg:{
 
 
 alignSelf: 'center',
-marginBottom: -200,
+marginBottom: 200,
 marginTop: 150
 
 

@@ -9,8 +9,9 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'mobx-react/native'
 import { NativeRouter, Route, Link } from 'react-router-native'
 
-import Main from './Inventory.js';
 import store from './../config/Mobx'
+import Main from './Main'
+import Item from './Item'
 
 /*
 
@@ -66,6 +67,7 @@ export default class App extends Component<{}> {
           <Route exact path="/" component={() => <Main />}/>
           <Route path="/about" component={() => <Main about={'about shit'} />}/>
           <Route path="/topics" component={() => <Main topic={'topic shit'} />}/>
+          <Route path='/inv/:id' component={({match}) => <Item id={match.params.id}/>} />
         </View>
         </NativeRouter>
       </Provider>

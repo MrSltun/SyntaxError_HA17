@@ -6,9 +6,8 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-import {inject, observer} from 'mobx-react/native'
 import { Link } from 'react-router-native'
-
+import {inject, observer} from 'mobx-react/native'
 
 @inject('store') @observer
 export default class Inventory extends Component {
