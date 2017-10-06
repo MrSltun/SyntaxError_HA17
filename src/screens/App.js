@@ -62,7 +62,7 @@ export default class App extends Component<{}> {
     return (
       <Provider store={store}>
         <NativeRouter>
-          <View>
+          <View style={{flex: 1}}>
           <Route exact path="/" component={() => <Main />}/>
           <Route path="/about" component={() => <Main about={'about shit'} />}/>
           <Route path="/topics" component={() => <Main topic={'topic shit'} />}/>
