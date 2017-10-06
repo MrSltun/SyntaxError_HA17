@@ -10,8 +10,10 @@ import { Provider } from 'mobx-react/native'
 import { NativeRouter, Route, Link } from 'react-router-native'
 
 import store from './../config/Mobx'
-import Main from './Item'
+import Main from './Main'
 import Item from './Item'
+import Camera from './Camera'
+
 /*
 
 
@@ -67,6 +69,7 @@ export default class App extends Component<{}> {
           <Route path="/about" component={() => <Main about={'about shit'} />}/>
           <Route path="/topics" component={() => <Main topic={'topic shit'} />}/>
           <Route path='/inv/:id' component={({match}) => <Item id={match.params.id}/>} />
+          <Route path='/camera' component={() => <Camera />}/>
         </View>
         </NativeRouter>
       </Provider>

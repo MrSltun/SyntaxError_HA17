@@ -8,8 +8,8 @@ import {
   Image
 } from 'react-native';
 import { Link } from 'react-router-native'
-import {inject, observer} from 'mobx-react/native'
 import { Container, Header, Content, Left, Right, Icon, Title, Button, List, ListItem, Thumbnail, Text, Body } from 'native-base';
+import {inject, observer} from 'mobx-react/native'
 
 @inject('store') @observer
 export default class Inventory extends Component {

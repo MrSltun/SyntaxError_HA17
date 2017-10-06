@@ -6,35 +6,34 @@ import {
 } from 'react-native';
 import { Container, Header, Content, Button, Text } from 'native-base';
 import {Link} from 'react-router-native'
-
+import Dimensions from 'Dimensions'
+const width = Dimensions.get('window').width
 
 export default class Main extends Component {
   render() {
     return (
-      <Container>
-
-    <View style={styles.containerImg}>
-    <Image
-          source={require('../img/home.jpg')}
-          style={{width: 100, height: 100}}
-
-        />
-        </View>
-
-          <View style={styles.container}>
-            <Button style={styles.button}>
-              <Text>Click Me! </Text>
+        <View style={styles.container}>
+          <Image
+            source={require('../img/home.jpg')}
+            style={{flex: 1.8, resizeMode: 'contain', height: width / 3, width: width / 3}} />
+          <View style={{flex: 1, justifyContent: 'space-around', padding: 120}}>
+            <Button>
+              <Link
+                to="/camera">
+              <Text>CAMERA</Text>
+            </Link>
             </Button>
-            <Button style={styles.button}>
-              <Text >Click Me! </Text>
+            <Button>
+              <Text>Click Me!</Text>
             </Button>
-            <Link
-              to="/inv/item2"
-              style={{height: 200, width: 210}}>
-              <Text> Click Me2! </Text>
-          </Link>
+            <Button>
+              <Link
+                to="/inv/item1">
+                <Text>CLICK ME!</Text>
+              </Link>
+            </Button>
           </View>
-        </Container>
+        </View>
     );
   }
 }
@@ -43,32 +42,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignSelf: 'center'
-
-
-
-
-  },
-  button:{
-  marginBottom: 10,
-  width: 150,
-  justifyContent: 'center',
-
-
-
-
-},
-containerImg:{
-
-
-alignSelf: 'center',
-marginBottom: 200,
-marginTop: 150
-
-
-
-},
-
-
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  }
 });
