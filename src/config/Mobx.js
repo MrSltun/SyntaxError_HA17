@@ -47,8 +47,10 @@ class Store {
   ]
 
   @observable addToInv = (item) => {
-    if (item.itemName && inv.indexOf(item.imageItem) === -1 ) {
-      inv.push(item.imageItem)
+    console.log('in the function');
+    if (this.inv.indexOf(item.imageItem) === -1) {
+      console.log('in the if');
+      this.inv.push(item.imageItem)
       let geo
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -57,8 +59,8 @@ class Store {
         },
         (error) => alert(error.message),
         {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000})
-      inv.push(item.imageItem)
-      inventory.push({...item, geo})
+      this.inv.push(item.imageItem)
+      this.inventory.push({...item, geo})
     }
   }
 }

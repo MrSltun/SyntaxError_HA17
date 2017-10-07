@@ -44,7 +44,7 @@ export default class Item extends Component {
           {this.data.elements.map((item, i) => {
             let color
             this.props.store.inv.indexOf(item) === -1 ? color = 'red' : color = 'lime'
-            return <Text style={{color: color}}>
+            return <Text keyExtractor={item} style={{color: color}}>
               {' - ' + item}
             </Text>
           })}
@@ -54,7 +54,7 @@ export default class Item extends Component {
           <View style={styles.button}>
             <Button block light>
               <Link to="/Map">
-                <Text>تحديد الموقع </Text>
+                <Text>تحديد الموقع</Text>
               </Link>
             </Button>
           </View>
