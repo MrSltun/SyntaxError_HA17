@@ -197,7 +197,10 @@ class MapStyle extends React.Component {
             longitudeDelta: LONGITUDE_DELTA,
           }}
           customMapStyle={customStyle}
-        />
+        >
+        <MapView.Marker coordinate={{latitude: 37.78825, longitude: -122.4324}}>
+        </MapView.Marker>
+        </MapView>
       </View>
     );
   }
