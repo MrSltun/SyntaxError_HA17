@@ -9,9 +9,9 @@ import MapView from 'react-native-maps';
 const { width, height } = Dimensions.get('window');
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = 37.78825;
-const LONGITUDE = -122.4324;
-const LATITUDE_DELTA = 0.0922;
+const LATITUDE = 24.679444;
+const LONGITUDE =  46.693009;
+const LATITUDE_DELTA = 0.008;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 const customStyle = [
@@ -198,7 +198,7 @@ class MapStyle extends React.Component {
           }}
           customMapStyle={customStyle}
         >
-        <MapView.Marker coordinate={{latitude: 37.78825, longitude: -122.4324}}>
+        <MapView.Marker coordinate={{latitude: 24.679444, longitude: 46.693009}}>
         </MapView.Marker>
         </MapView>
       </View>
