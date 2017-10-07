@@ -5,39 +5,57 @@ import {
   View,
   StyleSheet,
   TouchableHighlight,
-  Image
+  Image,
+  FlatList
 } from 'react-native';
 import { Link } from 'react-router-native'
 import { Container, Header, Content, Left, Right, Icon, Title, Button, List, ListItem, Thumbnail, Text, Body } from 'native-base';
 import {inject, observer} from 'mobx-react/native'
-import Main from './Main'
+
 
 @inject('store') @observer
 export default class Inventory extends Component {
-  render() {
-    let test, test2
-    test = this.props.about
-    test2= this.props.topic
+  constructor (props) {
+    super(props)
+    this._renderItem = this._renderItem.bind(this)
+  }
+
+  _renderItem ({ item }) {
     return (
-      <View>
-
-      <Header>
-        <Left>
-          <Button transparent>
-          <Link to="/">
-            <Icon name='arrow-back' />
-            </Link>
-          </Button>
-        </Left>
+      <ListItem style={styles.body}>
         <Body>
-          <Title>Inventory</Title>
+          <Text>{item.name}</Text>
         </Body>
-        <Right>
+      </ListItem>
+    )
+  }
 
-        </Right>
-      </Header>
+/*
+<FlatList
+  style={{alignSelf: 'stretch'}}
+  data={this.props.store.inventory}
+  removeClippedSubviews={false}
+  keyExtractor={item => item.key}
+  renderItem= {this._renderItem}/>
+*/
 
-          <List  style={styles.list}>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Link to="/">
+                <Icon name='arrow-back' />
+              </Link>
+            </Button>
+          </Left>
+          <Body>
+            <Title>Inventory</Title>
+          </Body>
+        </Header>
+
+          <List style={styles.list}>
             <ListItem style={styles.body}>
               <Body>
                 <Text>Sankhadeep</Text>
@@ -55,7 +73,6 @@ export default class Inventory extends Component {
             <ListItem style={styles.body}>
               <Body>
                 <Text>Sankhadeep</Text>
-                <Text note>Its time to build a difference . .</Text>
               </Body>
             </ListItem>
 
@@ -65,33 +82,24 @@ export default class Inventory extends Component {
                 <Text note>Its time to build a difference . .</Text>
               </Body>
             </ListItem>
+
           </List>
-
-
-
-</View>
+        </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
+    backgroundColor: '#FAFAFA'
   },
-
-  list:{
-
-   justifyContent: 'center',
-   width: 400,
-   paddingTop: 30
-
- },
- body: {
-
-   margin: 5
-
-
-
- }
-
-});
+  list: {
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    paddingTop: 10
+  },
+  body: {
+    marginLeft: 0
+  }
+}

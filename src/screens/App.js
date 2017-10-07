@@ -15,9 +15,8 @@ import Item from './Item'
 import Inventory from './Inventory'
 import Camera from './Camera'
 import Map from './Map'
+
 /*
-
-
   <NativeRouter>
     <View style={styles.container}>
       <View style={styles.nav}>
@@ -72,8 +71,6 @@ export default class App extends Component<{}> {
           <Route path="/Inventory" component={() => <Inventory  />}/>
           <Route path="/Item" component={() => <Item  />}/>
           <Route path="/Map" component={() => <Map  />}/>
-
-
 
           <Route path='/inv/:id' component={({match}) => <Item id={match.params.id}/>} />
           <Route path='/camera' component={() => <Camera />}/>

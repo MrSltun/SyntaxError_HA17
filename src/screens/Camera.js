@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  Dimensions,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -10,8 +8,6 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 
-const width = Dimensions.get('window').width
-const height = Dimensions.get('window').height
 
 export default class Screen extends Component {
   constructor (props) {
@@ -39,7 +35,20 @@ export default class Screen extends Component {
     const options = {};
     // options.location = navigator.geolocation.getCurrentPosition()
     this.camera.capture({metadata: options, target: Camera.constants.CaptureTarget.memory})
-      .then((res) => console.log(res.data))
+      .then((res) => {
+/*        fetch('https://requestb.in/q2dbadq2', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            data: res.data,
+            sup: 'PUTA',
+          })
+        })
+        .catch((error) => {console.error(error)});*/
+      })
       .catch(err => console.error(err));
   }
 }
