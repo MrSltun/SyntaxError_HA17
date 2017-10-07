@@ -16,7 +16,7 @@ export default class Main extends Component {
         <View style={styles.containerImg}>
           <Image
             source={require('../img/home.png')}
-            style={{ width: width / 5 , height: width / 5 }} />
+            style={{ width: width / 2 , height: width / 2 }} />
         </View>
         <View style={{...styles.container, justifyContent: 'center'}}>
           <Button style={styles.button}>

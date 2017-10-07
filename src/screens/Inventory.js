@@ -52,9 +52,11 @@ export default class Inventory extends Component {
               </Link>
             </Button>
           </Left>
+          <Right>
           <Body>
-            <Title>Inventory</Title>
+            <Title>المخزن</Title>
           </Body>
+          </Right>
         </Header>
 
           <List style={styles.list}>

@@ -10,7 +10,7 @@ import {
 import { Link } from 'react-router-native'
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, H2 } from 'native-base';
 import {inject, observer} from 'mobx-react/native'
-
+import Map from './Map.js'
 @inject('store') @observer
 export default class Item extends Component {
   componentWillMount () {
@@ -30,9 +30,11 @@ export default class Item extends Component {
               </Link>
             </Button>
           </Left>
+          <Right>
           <Body>
-            <Title>Item Title</Title>
+            <Title>الموارد</Title>
           </Body>
+          </Right>
         </Header>
 
         <View style={styles.view2}>
@@ -43,14 +45,10 @@ export default class Item extends Component {
         <View style={styles.view3}>
           <View style={styles.button}>
             <Button block light>
-              <Text>Dark</Text>
+              <Text>تحديد الموقع </Text>
             </Button>
         </View>
-        <View style={styles.button}>
-          <Button block light>
-            <Text>Dark</Text>
-          </Button>
-        </View>
+
         </View>
       </View>
     );
