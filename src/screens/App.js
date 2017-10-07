@@ -7,9 +7,11 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'mobx-react/native'
+import { StyleProvider } from 'native-base'
 import { NativeRouter, Route, Link } from 'react-router-native'
 
 import store from './../config/Mobx'
+import getTheme from '../../native-base-theme/components';
 import Main from './Main'
 import Item from './Item'
 import Inventory from './Inventory'
@@ -63,19 +65,20 @@ export default class App extends Component<{}> {
   render() {
     return (
       <Provider store={store}>
+        <StyleProvider style={getTheme()}>
         <NativeRouter>
           <View style={{flex: 1}}>
           <Route exact path="/" component={() => <Main />}/>
-          <Route path="/about" component={() => <Main about={'about shit'} />}/>
 
-          <Route path="/Inventory" component={() => <Inventory  />}/>
-          <Route path="/Item" component={() => <Item  />}/>
-          <Route path="/Map" component={() => <Map  />}/>
+          <Route exact path="/Inventory" component={() => <Inventory />}/>
+          <Route path="/Item" component={() => <Item />}/>
+          <Route path="/Map" component={() => <Map />}/>
 
-          <Route path='/inv/:id' component={({match}) => <Item id={match.params.id}/>} />
+          <Route path='/Inventory/:id' component={({match}) => <Item id={match.params.id}/>} />
           <Route path='/camera' component={() => <Camera />}/>
         </View>
         </NativeRouter>
+      </StyleProvider>
       </Provider>
     );
   }

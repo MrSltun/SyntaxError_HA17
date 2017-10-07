@@ -45,14 +45,14 @@ const styles = {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#FAFAFA'
+    backgroundColor: 'darkgrey'
   },
 
   button:{
     margin: 7,
     width: 150,
     justifyContent: 'center'
-    },
+  },
 
   containerImg:{
     flex: 1.3,

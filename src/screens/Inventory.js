@@ -24,7 +24,9 @@ export default class Inventory extends Component {
     return (
       <ListItem style={styles.body}>
         <Body>
-          <Text>{item.name}</Text>
+          <Link to={`/Inventory/${item.id}`}>
+            <Text>{item.name}</Text>
+          </Link>
         </Body>
       </ListItem>
     )
@@ -70,9 +72,11 @@ export default class Inventory extends Component {
               </Body>
             </ListItem>
 
-            <ListItem style={styles.body}>
+            <ListItem button style={styles.body}>
               <Body>
+                <Link to={`/`}>
                 <Text>Sankhadeep</Text>
+              </Link>
               </Body>
             </ListItem>
 
