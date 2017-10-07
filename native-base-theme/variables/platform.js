@@ -108,12 +108,12 @@ export default {
   cardDefaultBg: "#fff",
 
   // Color TODO colors
-  brandPrimary: platform === "ios" ? "#007aff" : "#68541d",
-  brandInfo: "#62B1F6",
-  brandSuccess: "#5cb85c",
-  brandDanger: "#d9534f",
-  brandWarning: "#f0ad4e",
-  brandSidebar: "#252932",
+  brandPrimary: platform === "ios" ? "#2E7D32" : "#2E7D32",
+  brandInfo: "#2E7D32",
+  brandSuccess: "#2E7D32",
+  brandDanger: "#2E7D32",
+  brandWarning:"#2E7D32",
+  brandSidebar: "#2E7D32",
 
   // Font
   fontFamily: platform === "ios" ? "System" : "Roboto",
@@ -151,7 +151,7 @@ export default {
 
   // Header
   toolbarBtnColor: platform === "ios" ? "#007aff" : "#fff",
-  toolbarDefaultBg: platform === "ios" ? "#F8F8F8" : "#451259", // TODO header
+  toolbarDefaultBg: platform === "ios" ? "#1B5E20" : "#1B5E20", // TODO header
   toolbarHeight: platform === "ios" ? 64 : 56,
   toolbarIconSize: platform === "ios" ? 20 : 22,
   toolbarSearchIconSize: platform === "ios" ? 20 : 23,

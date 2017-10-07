@@ -96,7 +96,7 @@ export default class Inventory extends Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA'
+    backgroundColor: '#E8F5E9'
   },
   list: {
     justifyContent: 'center',

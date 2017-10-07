@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    backgroundColor: '#FAFAFA'
+    backgroundColor: '#E8F5E9'
   },
   button: {
     flex: 1,

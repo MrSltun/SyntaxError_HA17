@@ -15,8 +15,8 @@ export default class Main extends Component {
       <View style={styles.container}>
         <View style={styles.containerImg}>
           <Image
-            source={require('../img/home.jpg')}
-            style={{ width: width / 3 , height: width / 3 }} />
+            source={require('../img/home.png')}
+            style={{ width: width / 5 , height: width / 5 }} />
         </View>
         <View style={{...styles.container, justifyContent: 'center'}}>
           <Button style={styles.button}>
@@ -45,7 +45,7 @@ const styles = {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: 'darkgrey'
+    backgroundColor: '#E8F5E9'
   },
 
   button:{
