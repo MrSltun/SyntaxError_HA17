@@ -16,7 +16,7 @@ export default class Item extends Component {
   componentWillMount () {
     let id = this.props.id
 
-    this.data = this.props.store.items[id]
+    this.data = this.props.store.inventory.find((item) => {return item.imageItem === this.props.id })
   }
 
   render() {
@@ -25,34 +25,39 @@ export default class Item extends Component {
         <Header style={styles.Header}>
           <Left>
             <Button transparent>
-              <Link to="/">
+              <Link to="/Inventory">
                 <Icon name='arrow-back' />
               </Link>
             </Button>
           </Left>
           <Right>
           <Body>
-            <Title>الموارد</Title>
+            <Title>{this.data.imageItem || 'غرض'}</Title>
           </Body>
           </Right>
         </Header>
 
         <View style={styles.view2}>
-          <H2>Item Title</H2>
-          <Text>this items is sooo coool you can use it now gg wep</Text>
+          <H2>{this.data.imageItem || 'غرض'}</H2>
+          <Text>{'\n'}</Text>
+          <Text>{this.data.description || 'شرح الغرض'}</Text>
+          {this.data.elements.map((item, i) => {
+            let color
+            this.props.store.inv.indexOf(item) === -1 ? color = 'red' : color = 'lime'
+            return <Text style={{color: color}}>
+              {' - ' + item}
+            </Text>
+          })}
         </View>
 
         <View style={styles.view3}>
           <View style={styles.button}>
-
             <Button block light>
               <Link to="/Map">
-              <Text>تحديد الموقع </Text>
+                <Text>تحديد الموقع </Text>
               </Link>
             </Button>
-
-        </View>
-
+          </View>
         </View>
       </View>
     );

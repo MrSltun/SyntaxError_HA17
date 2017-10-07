@@ -4,20 +4,34 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  View
+  View,
+  ToastAndroid
 } from 'react-native';
+import axios from 'axios';
 import Camera from 'react-native-camera';
+import { Icon } from 'native-base'
+import { Link } from 'react-router-native'
+import {inject, observer} from 'mobx-react/native'
 
-
+@inject('store') @observer
 export default class Screen extends Component {
   constructor (props) {
     super(props)
 
+    this._toast = this._toast.bind(this)
     this.takePicture = this.takePicture.bind(this)
   }
 
   componentDidMount () {
-    setInterval(() => this.takePicture(), 5000)
+    this._interval = setInterval(() => this.takePicture(), 5000)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this._interval)
+  }
+
+  _toast (text) {
+    ToastAndroid.show(`تم التعرف على: ${text}`, ToastAndroid.SHORT)
   }
 
   render() {
@@ -26,7 +40,11 @@ export default class Screen extends Component {
         <Camera
           ref={(cam) => {this.camera = cam}}
           style={styles.preview}
-          aspect={Camera.constants.Aspect.fill} />
+          aspect={Camera.constants.Aspect.fill}>
+          <Link to='/'>
+            <Icon name='ios-arrow-back' style={styles.capture} />
+          </Link>
+        </Camera>
       </View>
     );
   }
@@ -36,18 +54,13 @@ export default class Screen extends Component {
     // options.location = navigator.geolocation.getCurrentPosition()
     this.camera.capture({metadata: options, target: Camera.constants.CaptureTarget.memory})
       .then((res) => {
-/*        fetch('https://requestb.in/q2dbadq2', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            data: res.data,
-            sup: 'PUTA',
-          })
+        axios.post('http://192.168.7.241:3000/api/images', {image: res.data})
+        .then (res => {
+          response = res.data
+          this._toast(response.imageItem)
+          this.props.store.addToInv(response)
         })
-        .catch((error) => {console.error(error)});*/
+        .catch(err => console.log(err))
       })
       .catch(err => console.error(err));
   }
@@ -68,6 +81,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: '#000',
     padding: 10,
-    margin: 40
+    margin: 40,
+    width: 30
   }
 });

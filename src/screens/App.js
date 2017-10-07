@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'mobx-react/native'
 import { StyleProvider } from 'native-base'
-import { NativeRouter, Route, Link } from 'react-router-native'
+import { NativeRouter, Route, Link, AndroidBackButton } from 'react-router-native'
 
 import store from './../config/Mobx'
 import getTheme from '../../native-base-theme/components';
@@ -67,6 +67,7 @@ export default class App extends Component<{}> {
       <Provider store={store}>
         <StyleProvider style={getTheme()}>
         <NativeRouter>
+          <AndroidBackButton>
           <View style={{flex: 1}}>
           <Route exact path="/" component={() => <Main />}/>
 
@@ -75,9 +76,10 @@ export default class App extends Component<{}> {
           <Route path="/Map" component={() => <Map />}/>
 
           <Route path='/Inventory/:id' component={({match}) => <Item id={match.params.id}/>} />
-          <Route path='/camera' component={() => <Camera />}/>
+          <Route path='/Camera' component={() => <Camera />}/>
         </View>
-        </NativeRouter>
+      </AndroidBackButton>
+      </NativeRouter>
       </StyleProvider>
       </Provider>
     );

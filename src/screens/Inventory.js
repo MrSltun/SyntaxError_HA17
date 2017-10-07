@@ -12,7 +12,6 @@ import { Link } from 'react-router-native'
 import { Container, Header, Content, Left, Right, Icon, Title, Button, List, ListItem, Thumbnail, Text, Body } from 'native-base';
 import {inject, observer} from 'mobx-react/native'
 
-
 @inject('store') @observer
 export default class Inventory extends Component {
   constructor (props) {
@@ -24,8 +23,8 @@ export default class Inventory extends Component {
     return (
       <ListItem style={styles.body}>
         <Body>
-          <Link to={`/Inventory/${item.id}`}>
-            <Text>{item.name}</Text>
+          <Link to={`/Inventory/${item.imageItem}`}>
+            <Text>{item.imageItem}</Text>
           </Link>
         </Body>
       </ListItem>
@@ -60,35 +59,12 @@ export default class Inventory extends Component {
         </Header>
 
           <List style={styles.list}>
-            <ListItem style={styles.body}>
-              <Body>
-                <Text>Sankhadeep</Text>
-                <Text note>Its time to build a difference . .</Text>
-              </Body>
-            </ListItem>
-
-            <ListItem style={styles.body}>
-              <Body>
-                <Text>Sankhadeep</Text>
-                <Text note>Its time to build a difference . .</Text>
-              </Body>
-            </ListItem>
-
-            <ListItem button style={styles.body}>
-              <Body>
-                <Link to={`/`}>
-                <Text>Sankhadeep</Text>
-              </Link>
-              </Body>
-            </ListItem>
-
-            <ListItem style={styles.body}>
-              <Body>
-                <Text>Sankhadeep</Text>
-                <Text note>Its time to build a difference . .</Text>
-              </Body>
-            </ListItem>
-
+            <FlatList
+              style={{alignSelf: 'stretch'}}
+              data={this.props.store.inventory}
+              removeClippedSubviews={false}
+              keyExtractor={item => item.imageItem}
+              renderItem= {this._renderItem}/>
           </List>
         </View>
     );
@@ -106,6 +82,7 @@ const styles = {
     paddingTop: 10
   },
   body: {
-    marginLeft: 0
+    marginLeft: 0,
+    marginVertical: 2
   }
 }
