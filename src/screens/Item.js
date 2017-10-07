@@ -44,9 +44,13 @@ export default class Item extends Component {
 
         <View style={styles.view3}>
           <View style={styles.button}>
+
             <Button block light>
+              <Link to="/Map">
               <Text>تحديد الموقع </Text>
+              </Link>
             </Button>
+
         </View>
 
         </View>
