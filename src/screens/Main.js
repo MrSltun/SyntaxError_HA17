@@ -17,6 +17,7 @@ export default class Main extends Component {
 
 
 
+
                <View style={styles.boxOne}>
 
                <Image
