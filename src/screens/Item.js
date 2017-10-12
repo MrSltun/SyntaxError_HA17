@@ -52,9 +52,9 @@ export default class Item extends Component {
 
         <View style={styles.view3}>
           <View style={styles.button}>
-            <Button block light>
+            <Button rounded style={styles.button}>
               <Link to="/Map">
-                <Text>تحديد الموقع</Text>
+                <Text style={styles.text1}>تحديد الموقع</Text>
               </Link>
             </Button>
           </View>
@@ -71,8 +71,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa'
   },
   button: {
-    flex: 1,
-    maxWidth: 100
+    marginBottom: 20,
+    width: 150,
+    justifyContent: 'center'
   },
   view1: {
     flex: 2,
@@ -88,5 +89,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent:'space-around'
+  },
+  text1:{
+   fontSize: 25
+
+
+
   }
 });
