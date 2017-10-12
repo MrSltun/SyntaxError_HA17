@@ -40,7 +40,7 @@ export default class Item extends Component {
         <View style={styles.view2}>
           <H2>{this.data.imageItem || 'غرض'}</H2>
           <Text>{'\n'}</Text>
-          <Text>{this.data.description || 'شرح الغرض'}</Text>
+          <Text style={{fontSize: 20}}>{this.data.description || 'شرح الغرض'}</Text>
           {this.data.elements.map((item, i) => {
             let color
             this.props.store.inv.indexOf(item) === -1 ? color = 'red' : color = 'lime'
