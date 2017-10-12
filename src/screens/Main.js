@@ -17,13 +17,30 @@ export default class Main extends Component {
 
 
 
+<View>
+<Header>
+<Body>
+<Title style={styles.title}>Main</Title>
+</Body>
+</Header>
+</View>
+
+
                <View style={styles.boxOne}>
 
+
                <Image
-                           source={require('../img/icon.png')}
+                           source={require('../img/icon_t.png')}
                            style={{ resizeMode: 'contain', width: width / 2 , height: width / 2 }} />
 
+
+                          <Text style={styles.text}>المستكشف الذكي</Text>
+
+
+
+
                </View>
+
 
 
 
@@ -33,14 +50,20 @@ export default class Main extends Component {
 
 
 
+         <Footer>
+           <FooterTab style={styles.button}>
+             <Button active>
+               <Icon active name="apps" />
+             </Button>
+             <Button>
+               <Icon name="camera" />
+             </Button>
+             <Button >
+               <Icon  name="navigate" />
+             </Button>
 
-         <Button rounded style={styles.button}>
-           <Text>Start Scanning</Text>
-         </Button>
-
-         <Button rounded style={styles.button}>
-           <Text>Inventory</Text>
-         </Button>
+           </FooterTab>
+         </Footer>
 
          </View>
 
@@ -72,7 +95,7 @@ const styles = {
 
   boxOne: {
    flex: 2,
-   backgroundColor: '#fafafa',
+   backgroundColor: '#E0E0E0',
    justifyContent: 'center',
    alignItems: 'center',
 
@@ -81,10 +104,9 @@ const styles = {
 
 
   boxTwo: {
-   flex: 1,
-   backgroundColor: '#fafafa',
-   alignItems: 'center',
-   justifyContent: 'center',
+   flex: 0.17,
+   backgroundColor: 'red',
+
 
  },
 
@@ -94,11 +116,28 @@ const styles = {
 button:{
 
 alignSelf: 'center',
-marginBottom: 20
+//marginBottom: 20
+backgroundColor: '#2E7D32'
 
 
 
 },
+text:{
+
+fontSize: 50,
+fontWeight: 'bold',
+color: '#2E7D32',
+marginTop: 30
+
+
+
+},
+title:{
+
+alignSelf: 'center'
+
+
+}
 
 
 }
