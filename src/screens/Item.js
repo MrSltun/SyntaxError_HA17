@@ -44,7 +44,7 @@ export default class Item extends Component {
           {this.data.elements.map((item, i) => {
             let color
             this.props.store.inv.indexOf(item) === -1 ? color = 'red' : color = 'lime'
-            return <Text keyExtractor={item} style={{color: color}}>
+            return <Text keyExtractor={item} style={{color: color, fontSize: 25}}>
               {' - ' + item}
             </Text>
           })}
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    backgroundColor: '#E8F5E9'
+    backgroundColor: '#fafafa'
   },
   button: {
     flex: 1,

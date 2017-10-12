@@ -23,6 +23,8 @@ export default class Main extends Component {
                            source={require('../img/icon.png')}
                            style={{ resizeMode: 'contain', width: width / 2 , height: width / 2 }} />
 
+                                     <Text style={styles.text}>المستكشف الذكي</Text>
+
                </View>
 
 
@@ -37,7 +39,7 @@ export default class Main extends Component {
          <Button rounded style={styles.button}>
          <Link to="/Camera">
 
-           <Text>Start Scanning</Text>
+           <Text >ابدا المسح</Text>
            </Link>
 
          </Button>
@@ -45,7 +47,7 @@ export default class Main extends Component {
          <Button rounded style={styles.button}>
          <Link to="/Inventory">
 
-           <Text>Inventory</Text>
+           <Text>المخزن</Text>
            </Link>
 
          </Button>
@@ -102,7 +104,17 @@ const styles = {
 button:{
 
 alignSelf: 'center',
-marginBottom: 20
+marginBottom: 20,
+
+
+
+},
+text:{
+
+fontSize: 50,
+fontWeight: 'bold',
+color: '#2E7D32',
+marginTop: 30
 
 
 
