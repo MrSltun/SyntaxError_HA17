@@ -51,16 +51,14 @@ export default class Inventory extends Component {
               </Link>
             </Button>
           </Left>
-          <Right>
           <Body>
-            <Title>المخزن</Title>
+            <Title style={styles.title}>المخزن</Title>
           </Body>
-          </Right>
         </Header>
 
           <List style={styles.list}>
             <FlatList
-              style={{alignSelf: 'stretch'}}
+              style={{alignSelf: 'stretch', backgroundColor: 'gray'}}
               data={this.props.store.inventory}
               removeClippedSubviews={false}
               keyExtractor={item => item.imageItem}
@@ -74,15 +72,23 @@ export default class Inventory extends Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#E8F5E9'
+    backgroundColor: '#fafafa'
   },
   list: {
     justifyContent: 'center',
-    alignItems: 'stretch',
-    paddingTop: 10
+    paddingTop: 10,
+    width: 350,
+    alignSelf: 'center'
   },
   body: {
     marginLeft: 0,
     marginVertical: 2
+  },
+  title:{
+
+   marginLeft: 200
+
+
+
   }
 }

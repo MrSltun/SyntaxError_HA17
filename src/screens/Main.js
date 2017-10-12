@@ -35,11 +35,19 @@ export default class Main extends Component {
 
 
          <Button rounded style={styles.button}>
+         <Link to="/Camera">
+
            <Text>Start Scanning</Text>
+           </Link>
+
          </Button>
 
          <Button rounded style={styles.button}>
+         <Link to="/Inventory">
+
            <Text>Inventory</Text>
+           </Link>
+
          </Button>
 
          </View>
