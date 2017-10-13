@@ -51,16 +51,8 @@ class Store {
     if (this.inv.indexOf(item.imageItem) === -1) {
       console.log('in the if');
       this.inv.push(item.imageItem)
-      let geo
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          geo = {latitude: position.coords.latitude,
-            longitude: position.coords.longitude}
-        },
-        (error) => alert(error.message),
-        {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000})
       this.inv.push(item.imageItem)
-      this.inventory.push({...item, geo})
+      this.inventory.push(item)
     }
   }
 }

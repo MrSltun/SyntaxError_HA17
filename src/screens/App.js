@@ -69,13 +69,13 @@ export default class App extends Component<{}> {
         <NativeRouter>
           <AndroidBackButton>
           <View style={{flex: 1}}>
-          <Route exact path="/" component={() => <Main />}/>
+          <Route exact path="/" component={(context) => <Main context={context} />}/>
 
-          <Route exact path="/Inventory" component={() => <Inventory />}/>
-          <Route path="/Item" component={() => <Item />}/>
-          <Route path="/Map" component={() => <Map />}/>
+          <Route exact path="/Inventory" component={(context) => <Inventory context={context} />}/>
+          <Route path="/Item" component={(context) => <Item context={context} />}/>
+          <Route path="/Map" component={(context) => <Map context={context} />}/>
 
-          <Route path='/Inventory/:id' component={({match}) => <Item id={match.params.id}/>} />
+          <Route path='/Inventory/:id' component={({match, location, history}) => <Item history={history} id={match.params.id}/>} />
           <Route path='/Camera' component={() => <Camera />}/>
         </View>
       </AndroidBackButton>

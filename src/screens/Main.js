@@ -14,52 +14,20 @@ export default class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
-
-
-
-
-               <View style={styles.boxOne}>
-
-               <Image
-                           source={require('../img/icon.png')}
-                           style={{ resizeMode: 'contain', width: width / 2 , height: width / 2 }} />
-
-                                     <Text style={styles.text}>المستكشف الذكي</Text>
-
-               </View>
-
-
-
-
-
-         <View style={styles.boxTwo}>
-
-
-
-
-         <Button rounded style={styles.button}>
-         <Link to="/Camera">
-
-           <Text >ابدا المسح</Text>
-           </Link>
-
-         </Button>
-
-         <Button rounded style={styles.button}>
-         <Link to="/Inventory">
-
-           <Text>المخزن</Text>
-           </Link>
-
-         </Button>
-
-         </View>
-
-
-
-
-
-
+        <View style={styles.boxOne}>
+          <Image
+            source={require('../img/icon.png')}
+            style={{ resizeMode: 'contain', width: width / 2 , height: width / 2 }} />
+          <Text style={styles.text}>المستكشف الذكي</Text>
+        </View>
+        <View style={styles.boxTwo}>
+          <Button rounded style={styles.button} onPress={() => {this.props.context.history.push('/Camera')}}>
+            <Text >ابدا المسح</Text>
+          </Button>
+          <Button rounded style={styles.button} onPress={() => {this.props.context.history.push('/Inventory')}}>
+            <Text>المخزن</Text>
+          </Button>
+        </View>
       </View>
     );
   }
@@ -68,17 +36,11 @@ export default class Main extends Component {
 const styles = {
   container: {
     flex: 1,
-
-
   },
-
 
   boxcontainerOne: {
     flex: 1,
     flexDirection: 'column'
-
-
-
   },
 
   boxOne: {
@@ -86,40 +48,24 @@ const styles = {
    backgroundColor: '#fafafa',
    justifyContent: 'center',
    alignItems: 'center',
-
-
  },
-
 
   boxTwo: {
    flex: 1,
    backgroundColor: '#fafafa',
    alignItems: 'center',
    justifyContent: 'center',
-
  },
 
+ button:{
+   alignSelf: 'center',
+   marginBottom: 20,
+ },
 
-
-
-button:{
-
-alignSelf: 'center',
-marginBottom: 20,
-
-
-
-},
-text:{
-
-fontSize: 50,
-fontWeight: 'bold',
-color: '#2E7D32',
-marginTop: 30
-
-
-
-},
-
-
-}
+ text:{
+   fontSize: 50,
+   fontWeight: 'bold',
+   color: '#2E7D32',
+   marginTop: 30
+   },
+ }

@@ -189,8 +189,6 @@ class MapStyle extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-
-
         <MapView
           provider={this.props.provider}
           style={styles.map}
@@ -200,25 +198,14 @@ class MapStyle extends React.Component {
             latitudeDelta: LATITUDE_DELTA,
             longitudeDelta: LONGITUDE_DELTA,
           }}
-          customMapStyle={customStyle}
-        >
-
-
-        <MapView.Marker coordinate={{latitude: 24.679444, longitude: 46.693009}}>
-        </MapView.Marker>
-
+          customMapStyle={customStyle}>
+          <MapView.Marker coordinate={{latitude: 24.679444, longitude: 46.693009}} />
         </MapView>
-
         <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={[styles.bubble, styles.button]}
-            >
-              <Text style={styles.buttonText}>العوده</Text>
-      </TouchableOpacity>
-      </View>
-
-
-
+          <TouchableOpacity style={[styles.bubble, styles.button]} onPress={() => {this.props.context.history.goBack()}}>
+            <Text style={styles.buttonText}>العودة</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -231,34 +218,37 @@ MapStyle.propTypes = {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-
     alignItems: 'center',
   },
+
   map: {
     ...StyleSheet.absoluteFillObject,
   },
-  buttonText: {
-  textAlign: 'center',
-},
-button: {
-  width: 100,
-  paddingHorizontal: 8,
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginHorizontal: 5,
-},
-bubble: {
-  backgroundColor: 'rgba(255,255,255,0.7)',
-  paddingHorizontal: 18,
-  paddingVertical: 12,
-  borderRadius: 20,
-},
-buttonContainer: {
-  flexDirection: 'row',
-  marginVertical: 600,
-  backgroundColor: 'transparent',
-},
 
+  buttonText: {
+    textAlign: 'center',
+  },
+
+  button: {
+    width: 100,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 5,
+  },
+
+  bubble: {
+    backgroundColor: 'rgba(255,255,255,0.7)',
+    paddingHorizontal: 18,
+    paddingVertical: 12,
+    borderRadius: 20,
+  },
+
+  buttonContainer: {
+    flexDirection: 'row',
+    marginVertical: 600,
+    backgroundColor: 'transparent',
+  },
 });
 
 module.exports = MapStyle;

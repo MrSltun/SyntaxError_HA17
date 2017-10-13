@@ -45,10 +45,8 @@ export default class Inventory extends Component {
       <View style={styles.container}>
         <Header>
           <Left>
-            <Button transparent>
-              <Link to="/">
+            <Button transparent onPress={() => {this.props.context.history.push('/')}}>
                 <Icon name='arrow-back' />
-              </Link>
             </Button>
           </Left>
           <Body>

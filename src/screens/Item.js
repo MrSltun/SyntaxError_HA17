@@ -14,9 +14,11 @@ import Map from './Map.js'
 @inject('store') @observer
 export default class Item extends Component {
   componentWillMount () {
+    console.log(this.props)
     let id = this.props.id
 
     this.data = this.props.store.inventory.find((item) => {return item.imageItem === this.props.id })
+
   }
 
   render() {
@@ -24,10 +26,8 @@ export default class Item extends Component {
       <View style={styles.container}>
         <Header style={styles.Header}>
           <Left>
-            <Button transparent>
-              <Link to="/Inventory">
-                <Icon name='arrow-back' />
-              </Link>
+            <Button transparent onPress={() => {this.props.history.push('/Inventory')}}>
+              <Icon name='arrow-back' />
             </Button>
           </Left>
           <Right>
@@ -38,13 +38,13 @@ export default class Item extends Component {
         </Header>
 
         <View style={styles.view2}>
-          <H2>{this.data.imageItem || 'غرض'}</H2>
+          <H2>{this.data.itemName || 'غرض'}</H2>
           <Text>{'\n'}</Text>
           <Text style={{fontSize: 20}}>{this.data.description || 'شرح الغرض'}</Text>
           {this.data.elements.map((item, i) => {
             let color
             this.props.store.inv.indexOf(item) === -1 ? color = 'red' : color = 'lime'
-            return <Text keyExtractor={item} style={{color: color, fontSize: 25}}>
+            return <Text key={item} style={{color: color, fontSize: 25}}>
               {' - ' + item}
             </Text>
           })}
@@ -52,10 +52,8 @@ export default class Item extends Component {
 
         <View style={styles.view3}>
           <View style={styles.button}>
-            <Button rounded style={styles.button}>
-              <Link to="/Map">
-                <Text style={styles.text1}>تحديد الموقع</Text>
-              </Link>
+            <Button rounded style={styles.button} onPress={() => {this.props.history.push('/Map')}}>
+              <Text style={styles.text1}>تحديد الموقع</Text>
             </Button>
           </View>
         </View>
