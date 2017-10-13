@@ -77,8 +77,8 @@ const styles = {
   list: {
     justifyContent: 'center',
     paddingTop: 10,
-    width: 350,
-    alignSelf: 'center'
+    marginHorizontal: 10,
+    alignSelf: 'stretch'
   },
   body: {
     marginLeft: 0,
