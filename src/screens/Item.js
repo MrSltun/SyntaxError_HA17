@@ -26,7 +26,7 @@ export default class Item extends Component {
       <View style={styles.container}>
         <Header style={styles.Header}>
           <Left>
-            <Button transparent onPress={() => {this.props.history.push('/Inventory')}}>
+            <Button transparent onPress={() => {this.props.history.goBack()}}>
               <Icon name='arrow-back' />
             </Button>
           </Left>

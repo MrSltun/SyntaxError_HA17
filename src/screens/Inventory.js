@@ -1,4 +1,4 @@
-/* @flow */
+/* @flodw */
 
 import React, { Component } from 'react';
 import {
@@ -45,7 +45,7 @@ export default class Inventory extends Component {
       <View style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => {this.props.context.history.push('/')}}>
+            <Button transparent onPress={() => {this.props.context.history.goBack()}}>
                 <Icon name='arrow-back' />
             </Button>
           </Left>
